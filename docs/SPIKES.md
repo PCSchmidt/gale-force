@@ -15,6 +15,11 @@
 | **S9** | Can async verification reject cheating? | Tampered inputs (impossible trim rates, teleports) | 100% rejected; 0% false rejects on 1,000 legitimate runs | Tighten bounds |
 | **S10** | Are the assist levels coherent? | Compare times Cadet→Expert | Monotonic improvement of skilled sailor times with less assistance, and novice lower variance with more | Revisit assist effects |
 | **S11** | Can learned sailors be competitive? | Imitation + RL on the headless sim | Learned policy beats scripted bot in ≥ 60% of fleet races; no exploit identified in review | Improve observations/rewards; keep scripted |
+| **S12** | Does a learned tactical policy beat scripted bots? | Self-play PPO in the headless sim per ML.md section 1 | Mean finishing position better than the best scripted bot on held-out venues with CI excluding zero; rule-violation rate <= scripted bots | Simplify action space; keep scripted AI |
+| **S13** | Is the boat model calibrated with uncertainty? | System-identification run against reference polars | Polar error and parameter posterior reported; fits within S1 tolerance | Expand model terms |
+| **S14** | Do agent rulings agree with the engine? | Rules Explainer on 200 logged rulings | 100% consistent with the logged ruling; contradictions treated as bugs | Constrain explainer to templates |
+
+Pass thresholds are initial targets and must be justified before a pass is claimed.
 
 ## Order
 S1 → S2 → S3 → S4 (in parallel with S5) → S6 → S7/S8 → S9/S10 → S11.
